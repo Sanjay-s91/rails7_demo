@@ -1,0 +1,16 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if current_user.present? %>
+  <p> You Have Successfully Logged in</p>
+    <p> Hello <%= current_user.email %> </p>
+   <br>
+   <%= button_to( "Log Out", destroy_user_session_path, method: :delete) %>
+<% else %>
+   <p> User is not sign in </p>
+  <%=  link_to 'Sign up', new_user_registration_path %>
+  <br>
+  <%=  link_to 'Sign in', user_session_path %>
+  <br>
+<% end %>
+
