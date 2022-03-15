@@ -6,9 +6,9 @@ export default class extends Controller {
     this.element.setAttribute("data-action", "click -> turbo#click")
   }
   click(e) {
-    e.preventDefault()
-    debugger
+      e.preventDefault()
     this.url = this.element.getAttribute("href")
+
     fetch(this.url, {
       headers: {
         Accept: "text/vnd.turbo-stream.html"

@@ -1,17 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import jquery from "jquery"
+window.jQuery = jquery
+window.$ = jquery
 
-// export default class extends Controller {
-//   connect() {
-//     this.element.textContent = "Hello World!"
-//   }
-// }
-
-
-// import { Controller } from "stimulus"
-
-export default class extends Controller {
-  greet() {
-    $("#form").validate({
+// document.addEventListener('turbolinks:load', () => {})
+$(document).mouseover(function(){
+  $("#form").validate({
       rules: {
         "project[name]": {
           required: true,
@@ -33,8 +26,7 @@ export default class extends Controller {
         }
       }
     });
-    $.validator.addMethod("alphabet", function(value, element) {
-      return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
-    });
-  }
-}
+   $.validator.addMethod("alphabet", function(value, element) {
+    return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+  });
+});
